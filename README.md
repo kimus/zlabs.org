@@ -56,7 +56,7 @@ git commit -m "Add new post"
 git push origin main
 ```
 
-GitHub Actions builds the Hugo site and deploys it to GitHub Pages. The `static/CNAME` file configures the custom domain `zlabs.org`; configure the same custom domain in the repository's GitHub Pages settings and point DNS at GitHub Pages. Generated output in `public/` is ignored and should not be committed.
+GitHub Actions builds the Hugo site and deploys it to GitHub Pages. In the repository settings, enable Pages with **Build and deployment → Source: GitHub Actions** before the workflow runs. The `static/CNAME` file configures the custom domain `zlabs.org`; configure the same custom domain in the repository's GitHub Pages settings and point DNS at GitHub Pages. Generated output in `public/` is ignored and should not be committed.
 
 ## Build locally
 
