@@ -9,9 +9,8 @@
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta name="twitter:card" content="summary">
-  {{ with resources.Get "css/main.css" }}
-    {{ $css := . | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "css.html" . }}
   {{ end }}
   <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ site.Title }}">
 </head>

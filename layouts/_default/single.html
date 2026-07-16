@@ -1,10 +1,10 @@
 {{ define "main" }}
-<article class="post">
-  <header class="post-header">
-    {{ with .Section }}<p class="eyebrow">{{ . | title }}</p>{{ end }}
-    <h1>{{ .Title }}</h1>
+<article>
+  <header class="mb-10">
+    {{ with .Section }}<p class="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-emerald-400">{{ . | title }}</p>{{ end }}
+    <h1 class="text-4xl font-black tracking-tight text-slate-100 sm:text-5xl">{{ .Title }}</h1>
     {{ if or (not .Date.IsZero) .Params.tags }}
-      <div class="post-meta">
+      <div class="mt-4 flex flex-wrap gap-2 text-sm text-slate-500">
         {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
         {{ with .Params.tags }}
           {{ if not $.Date.IsZero }}<span>·</span>{{ end }}
@@ -14,11 +14,15 @@
     {{ end }}
   </header>
 
-  {{ with .Params.original_url }}
-    <p class="source-note">Originally published on <a href="{{ . }}" rel="noopener" target="_blank">DEV Community</a>.</p>
+  {{ with .Params.image }}
+    <img class="mb-8 aspect-[2.4/1] w-full rounded-3xl border border-slate-800 object-cover shadow-2xl shadow-slate-950/40" src="{{ . }}" alt="Cover image for {{ $.Title }}" loading="eager">
   {{ end }}
 
-  <div class="content">
+  {{ with .Params.original_url }}
+    <p class="mb-8 border-l-4 border-blue-500 bg-slate-900/70 px-4 py-3 text-slate-400">Originally published on <a href="{{ . }}" rel="noopener" target="_blank">DEV Community</a>.</p>
+  {{ end }}
+
+  <div class="prose prose-invert max-w-none prose-a:text-blue-400 prose-code:text-slate-100 prose-pre:border prose-pre:border-slate-800 prose-pre:bg-slate-900">
     {{ .Content }}
   </div>
 </article>

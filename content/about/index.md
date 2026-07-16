@@ -1,12 +1,22 @@
 +++
 title = "About"
-description = "About Helder Rossa and this personal technical notebook."
+description = "About Helder Rossa, ZLabs, and the technology, homelab, and maker notes published here."
 +++
 
-Hi, I'm Helder Rossa.
+I believe technology has important effects on business, culture, efficiency, and the relationships between people and systems.
 
-I write about software development, homelab infrastructure, developer tools, useful code snippets, and 3D printing experiments.
+Professionally, I help teams imagine, develop, and deliver technology solutions and services that support business goals and create room for people to do better work. I like technology that is useful, adaptable, and understandable enough to be improved over time.
 
-This blog is my personal technical notebook: a place for notes, build logs, small discoveries, and projects I want to remember or share.
+ZLabs is my personal technical notebook: a place for notes, build logs, small discoveries, code snippets, infrastructure experiments, and 3D printing projects I want to remember or share.
 
-You can find me on GitHub as [@kimus](https://github.com/kimus), connect with me on [LinkedIn](https://www.linkedin.com/in/helderrossa), follow me on [X](https://x.com/helderrossa), or see my 3D printing models on [MakerWorld](https://makerworld.com/en/@helder.rossa).
+## What I write about
+
+- Software development and backend systems
+- Homelab infrastructure and automation
+- Developer tools and productivity
+- Useful code snippets and experiments
+- 3D printing models, calibration, and maker projects
+
+## Elsewhere
+
+You can find my code on GitHub, older articles on DEV Community, professional profile on LinkedIn, short updates on X, and 3D printing models on MakerWorld.

@@ -1,9 +1,6 @@
-<footer class="site-footer">
-  <div class="social-links">
-    <a href="{{ site.Params.social.github }}" rel="me noopener" target="_blank">GitHub</a>
-    <a href="{{ site.Params.social.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a>
-    <a href="{{ site.Params.social.x }}" rel="me noopener" target="_blank">X</a>
-    <a href="{{ site.Params.social.makerworld }}" rel="me noopener" target="_blank">MakerWorld</a>
+<footer class="border-t border-slate-800 py-8 text-sm text-slate-500">
+  <div class="mb-5">
+    {{ partial "social-links.html" (dict "variant" "icon") }}
   </div>
-  <p>© {{ now.Year }} {{ site.Params.author }}. Built with Hugo.</p>
+  <p>© {{ now.Year }} {{ site.Params.author }}. Built with Hugo and TailwindCSS.</p>
 </footer>

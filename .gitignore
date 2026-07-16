@@ -14,3 +14,7 @@
 # Local environment
 .env
 .env.*
+
+# Node/Tailwind
+node_modules/
+hugo_stats.json

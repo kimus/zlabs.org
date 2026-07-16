@@ -16,12 +16,36 @@ author = "Helder Rossa"
 tagline = "Technical notes, build logs, snippets, and experiments."
 description = "ZLabs: personal notes on software development, homelab infrastructure, developer tools, code snippets, and 3D printing experiments."
 mainSections = ["posts"]
+avatar = "https://avatars.githubusercontent.com/u/188404?v=4"
+role = "Technology leader, developer, homelab tinkerer, and maker."
+location = "Sesimbra, Portugal"
 
 [params.social]
 github = "https://github.com/kimus"
 linkedin = "https://www.linkedin.com/in/helderrossa"
 x = "https://x.com/helderrossa"
+devto = "https://dev.to/kimus"
 makerworld = "https://makerworld.com/en/@helder.rossa"
+email = "mailto:helder@rossa.eu.org"
+
+[build]
+  [build.buildStats]
+  enable = true
+  [[build.cachebusters]]
+  source = 'assets/notwatching/hugo_stats\.json'
+  target = 'css'
+  [[build.cachebusters]]
+  source = '(postcss|tailwind)\.config\.js'
+  target = 'css'
+
+[module]
+  [[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+  [[module.mounts]]
+  disableWatch = true
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
 
 [markup]
   [markup.highlight]

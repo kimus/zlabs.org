@@ -1,0 +1,38 @@
+{{- $variant := .variant | default "icon" -}}
+{{- $items := slice
+  (dict "key" "github" "label" "GitHub" "url" site.Params.social.github "display" "github.com/kimus")
+  (dict "key" "linkedin" "label" "LinkedIn" "url" site.Params.social.linkedin "display" "linkedin.com/in/helderrossa")
+  (dict "key" "x" "label" "X" "url" site.Params.social.x "display" "x.com/helderrossa")
+  (dict "key" "devto" "label" "DEV" "url" site.Params.social.devto "display" "dev.to/kimus")
+  (dict "key" "makerworld" "label" "MakerWorld" "url" site.Params.social.makerworld "display" "makerworld.com/en/@helder.rossa")
+  (dict "key" "email" "label" "Email" "url" site.Params.social.email "display" "helder@rossa.eu.org")
+-}}
+{{- if eq $variant "label" -}}
+  <ul class="grid gap-3 sm:grid-cols-2" aria-label="Social and contact links">
+    {{- range $items }}
+      {{- $item := . -}}
+      {{- with $item.url }}
+        <li>
+          <a class="group flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-slate-300 transition hover:border-blue-500/50 hover:bg-slate-900 hover:text-slate-100 hover:no-underline" href="{{ . }}" {{ if not (hasPrefix . "mailto:") }}rel="me noopener" target="_blank"{{ end }}>
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-800 text-blue-400 transition group-hover:bg-blue-500/10 group-hover:text-blue-300">{{ partial "icon.html" $item.key }}</span>
+            <span class="min-w-0">
+              <span class="block font-semibold text-slate-100">{{ $item.label }}</span>
+              <span class="block truncate text-sm text-slate-500">{{ $item.display }}</span>
+            </span>
+          </a>
+        </li>
+      {{- end }}
+    {{- end }}
+  </ul>
+{{- else -}}
+  <div class="flex flex-wrap gap-3" aria-label="Social and contact links">
+    {{- range $items }}
+      {{- $item := . -}}
+      {{- with $item.url }}
+        <a class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-800 bg-slate-900/75 text-slate-400 transition hover:border-blue-500/60 hover:bg-blue-500/10 hover:text-blue-300 hover:no-underline" href="{{ . }}" aria-label="{{ $item.label }}" title="{{ $item.label }}" {{ if not (hasPrefix . "mailto:") }}rel="me noopener" target="_blank"{{ end }}>
+          {{ partial "icon.html" $item.key }}
+        </a>
+      {{- end }}
+    {{- end }}
+  </div>
+{{- end -}}

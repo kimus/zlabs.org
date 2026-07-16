@@ -2,9 +2,9 @@
 <html lang="{{ site.Language.Lang | default "en" }}">
   {{ partial "head.html" . }}
   <body>
-    <div class="page-shell">
+    <div class="mx-auto flex min-h-screen w-[min(100%-2rem,56rem)] flex-col">
       {{ partial "header.html" . }}
-      <main id="main">
+      <main id="main" class="flex-1 py-12 sm:py-16">
         {{ block "main" . }}{{ end }}
       </main>
       {{ partial "footer.html" . }}

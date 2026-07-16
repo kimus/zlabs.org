@@ -6,6 +6,7 @@ draft = false
 tags = ["tutorial", "backup", "macos", "productivity"]
 source = "dev.to"
 original_url = "https://dev.to/kimus/my-macos-from-scratch-setup-6ja"
+image = "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmekxz9ajhibvdexvje2m.jpg"
 +++
 
 Lately I needed to change computer. I've been thinking about backing up only my relevant files, like documents, images app settings, dotfiles, etc, instead of backing up the full OS. And when I wanted to install my macOS from scratch I would only need to execute a script to restore those files and quickly having a working computer in a couple of minutes.

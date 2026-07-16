@@ -2,7 +2,7 @@
 
 Personal technical notebook by Helder Rossa for software development, homelab infrastructure, developer tools, code snippets, and 3D printing experiments.
 
-Built with [Hugo](https://gohugo.io/), authored in Markdown, versioned with Git, and deployed with GitHub Actions to GitHub Pages at the custom domain root (`https://zlabs.org/`).
+Built with [Hugo](https://gohugo.io/) and TailwindCSS, authored in Markdown, versioned with Git, and deployed with GitHub Actions to GitHub Pages at the custom domain root (`https://zlabs.org/`).
 
 ## Links
 
@@ -13,9 +13,10 @@ Built with [Hugo](https://gohugo.io/), authored in Markdown, versioned with Git,
 
 ## Local preview
 
-Install Hugo Extended, then run:
+Install Hugo Extended and Node.js, then install dependencies and run Hugo:
 
 ```sh
+npm install
 hugo server --buildDrafts
 ```
 

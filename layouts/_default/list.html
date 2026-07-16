@@ -1,14 +1,14 @@
 {{ define "main" }}
-<header class="page-header">
-  <h1>{{ .Title }}</h1>
-  {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
+<header class="mb-10">
+  <h1 class="text-4xl font-black tracking-tight text-slate-100 sm:text-5xl">{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose prose-invert mt-5 max-w-none prose-a:text-blue-400 prose-code:text-slate-100">{{ . }}</div>{{ end }}
 </header>
 
-<section class="post-list">
+<section class="grid gap-4">
   {{ range .Pages.ByDate.Reverse }}
     {{ partial "post-card.html" . }}
   {{ else }}
-    <p>No content found.</p>
+    <p class="text-slate-400">No content found.</p>
   {{ end }}
 </section>
 {{ end }}

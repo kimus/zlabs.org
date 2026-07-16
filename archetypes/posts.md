@@ -4,6 +4,7 @@ date = {{ .Date }}
 description = ""
 draft = true
 tags = []
+image = ""
 source = ""
 original_url = ""
 +++

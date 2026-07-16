@@ -6,6 +6,7 @@ draft = false
 tags = ["tutorial", "backup"]
 source = "dev.to"
 original_url = "https://dev.to/kimus/how-easy-and-securely-is-to-backup-your-computer-2g7d"
+image = "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxzefdctiomwh76n9aivc.jpg"
 +++
 We all know that we should always back up our stuff and that there's lots of things that can go wrong if we don't:
 -   Hard drives could fail or loss data

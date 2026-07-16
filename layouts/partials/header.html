@@ -1,8 +1,8 @@
-<header class="site-header">
-  <a class="site-title" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
-  <nav class="site-nav" aria-label="Main navigation">
+<header class="flex flex-col gap-4 border-b border-slate-800 py-5 sm:flex-row sm:items-center sm:justify-between">
+  <a class="text-lg font-extrabold tracking-tight text-slate-100 hover:text-white hover:no-underline" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+  <nav class="flex flex-wrap gap-4 text-sm text-slate-400" aria-label="Main navigation">
     {{ range site.Menus.main }}
-      <a href="{{ .URL }}"{{ if strings.HasPrefix .URL "http" }} rel="me noopener" target="_blank"{{ end }}>{{ .Name }}</a>
+      <a class="text-slate-400 hover:text-slate-100" href="{{ .URL }}"{{ if strings.HasPrefix .URL "http" }} rel="me noopener" target="_blank"{{ end }}>{{ .Name }}</a>
     {{ end }}
   </nav>
 </header>

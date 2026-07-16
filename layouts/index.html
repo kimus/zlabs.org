@@ -1,28 +1,25 @@
 {{ define "main" }}
-<section class="hero">
-  <p class="eyebrow">Personal technical notebook</p>
-  <h1>{{ site.Title }}</h1>
-  <p class="lede">{{ site.Params.tagline }}</p>
-  <p>{{ site.Params.description }}</p>
-  <p>By {{ site.Params.author }}.</p>
-  <div class="hero-links">
-    <a href="{{ site.Params.social.github }}" rel="me noopener" target="_blank">GitHub</a>
-    <a href="{{ site.Params.social.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a>
-    <a href="{{ site.Params.social.x }}" rel="me noopener" target="_blank">X</a>
-    <a href="{{ site.Params.social.makerworld }}" rel="me noopener" target="_blank">MakerWorld</a>
+<section class="py-8 sm:py-14">
+  <p class="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-emerald-400">Personal technical notebook</p>
+  <h1 class="text-5xl font-black tracking-[-0.06em] text-slate-100 sm:text-7xl">{{ site.Title }}</h1>
+  <p class="mt-6 max-w-3xl text-2xl leading-snug text-slate-100 sm:text-3xl">{{ site.Params.tagline }}</p>
+  <p class="mt-5 max-w-2xl text-slate-400">{{ site.Params.description }}</p>
+  <p class="mt-2 max-w-2xl text-slate-500">By {{ site.Params.author }}.</p>
+  <div class="mt-7">
+    {{ partial "social-links.html" (dict "variant" "icon") }}
   </div>
 </section>
 
-<section class="post-list">
-  <div class="section-heading">
-    <h2>Latest posts</h2>
-    <a href="{{ relURL "posts" }}">View all</a>
+<section class="grid gap-4">
+  <div class="flex items-baseline justify-between gap-4">
+    <h2 class="text-2xl font-bold tracking-tight text-slate-100 sm:text-3xl">Latest posts</h2>
+    <a class="text-sm font-medium" href="{{ relURL "posts" }}">View all</a>
   </div>
   {{ $posts := where site.RegularPages "Section" "posts" }}
   {{ range first 6 $posts }}
     {{ partial "post-card.html" . }}
   {{ else }}
-    <p>No posts yet.</p>
+    <p class="text-slate-400">No posts yet.</p>
   {{ end }}
 </section>
 {{ end }}
