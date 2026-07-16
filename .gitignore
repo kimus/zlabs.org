@@ -1,0 +1,16 @@
+# Hugo generated output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Local coding-agent files
+.pi/
+
+# Local environment
+.env
+.env.*

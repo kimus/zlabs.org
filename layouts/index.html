@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow">Personal technical notebook</p>
+  <h1>{{ site.Title }}</h1>
+  <p class="lede">{{ site.Params.tagline }}</p>
+  <p>{{ site.Params.description }}</p>
+  <p>By {{ site.Params.author }}.</p>
+  <div class="hero-links">
+    <a href="{{ site.Params.social.github }}" rel="me noopener" target="_blank">GitHub</a>
+    <a href="{{ site.Params.social.linkedin }}" rel="me noopener" target="_blank">LinkedIn</a>
+    <a href="{{ site.Params.social.x }}" rel="me noopener" target="_blank">X</a>
+    <a href="{{ site.Params.social.makerworld }}" rel="me noopener" target="_blank">MakerWorld</a>
+  </div>
+</section>
+
+<section class="post-list">
+  <div class="section-heading">
+    <h2>Latest posts</h2>
+    <a href="{{ relURL "posts" }}">View all</a>
+  </div>
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ range first 6 $posts }}
+    {{ partial "post-card.html" . }}
+  {{ else }}
+    <p>No posts yet.</p>
+  {{ end }}
+</section>
+{{ end }}

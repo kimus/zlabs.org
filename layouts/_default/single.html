@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="post">
+  <header class="post-header">
+    {{ with .Section }}<p class="eyebrow">{{ . | title }}</p>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ if or (not .Date.IsZero) .Params.tags }}
+      <div class="post-meta">
+        {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+        {{ with .Params.tags }}
+          {{ if not $.Date.IsZero }}<span>·</span>{{ end }}
+          <span>{{ delimit . ", " }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+  </header>
+
+  {{ with .Params.original_url }}
+    <p class="source-note">Originally published on <a href="{{ . }}" rel="noopener" target="_blank">DEV Community</a>.</p>
+  {{ end }}
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
