@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.Language.Locale | default "en" }}">
+<html lang="{{ site.Language.LanguageCode | default site.Language.Lang | default "en" }}">
   {{ partial "head.html" . }}
   <body>
     <div class="page-shell">
