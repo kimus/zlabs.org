@@ -1,5 +1,4 @@
 baseURL = "https://zlabs.org/"
-languageCode = "en-us"
 locale = "en-us"
 title = "ZLabs"
 enableRobotsTXT = true
